@@ -1,4 +1,5 @@
 var HttpStatus=require('http-status');
+
 exports.SendSuccess=function (res,data){
     res.status(HttpStatus.OK).json({
         status:'success',

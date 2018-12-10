@@ -1,19 +1,12 @@
 let express = require('express');
 let bodyParser = require('body-parser');
 let app = express();
-let port = process.env.PORT || 9000;
+let port = 9000;
 let mongoose = require('mongoose');
 let morgan = require('morgan');
-let options = {
-	server: {
-		socketOptions: {
-			keepAlive: 300000
-		}
-	}
-};
 
 let mongodbUri = 'mongodb://localhost/hotelapp';
-mongoose.connect(mongodbUri, options);
+mongoose.connect(mongodbUri);
 let conn = mongoose.connection;
 
 conn.on('disconnected', function() {
